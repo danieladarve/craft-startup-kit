@@ -67,6 +67,7 @@
     ],
     "post-create-project-cmd": [
       "@composer dump-autoload -o",
+      "chmod -R 775 storage",
       "@php craft setup/welcome",
       "yarn install"
     ]
