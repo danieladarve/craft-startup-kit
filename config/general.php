@@ -21,10 +21,19 @@ return [
     // Account
     'autoLoginAfterAccountActivation' => true,
     // Control panel trigger word
+    // URL
     'cpTrigger'                       => 'admin',
+    'errorTemplatePrefix'             => '_',
+    // GraphQL
     'enableGql'                       => false,
     // The secure key Craft will use for hashing and encrypting data
     'securityKey'                     => App::env('SECURITY_KEY'),
+    // Cache
+    'enableTemplateCaching'           => true,
+    'cacheMethod'                     => 'file',
+    'cacheDuration'                   => 0, // 86400 = 24 Hours
+    'cacheElementQueries'             => false,
+    // Timezone
     'timezone'                        => 'Australia/Melbourne',
     // Images / Files
     'defaultImageQuality'             => '100',
@@ -33,8 +42,8 @@ return [
     'jpegoptimEnabled'                => true,
     'optipngEnabled'                  => true,
     // Aliases
-    'aliases' => [
-      '@assetBaseUrl' => getenv('ASSETS_URL'),
+    'aliases'                         => [
+      '@assetBaseUrl'  => getenv('ASSETS_URL'),
       '@assetBasePath' => getenv('ASSETS_PATH')
     ]
   ],
