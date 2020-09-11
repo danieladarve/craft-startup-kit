@@ -8,6 +8,13 @@ Made with the idea of reducing overkill builds when using VueJS or ReactJS for s
 
 See [Tailwind CSS](https://tailwindcss.com) and [AlpineJS](https://github.com/alpinejs/alpine) for more details.
 
+
+## How to Install
+
+1. `composer create-project k0d3rr/craft-startup-kit`
+2. Don't run `./craft setup`, instead manually edit the `.env` file.
+3. Once the `.env` is filled in, run `./craft install`
+
 ## What is included?
 
 - [Craft CMS 3.x](https://github.com/craftcms/cms)
@@ -51,6 +58,3 @@ Used a few plugins to speed up the development of common tasks such as styling t
 - [tailwindcss-aspect-ratio](https://github.com/webdna/tailwindcss-aspect-ratio)
 - [benface/tailwindcss-typography](https://github.com/benface/tailwindcss-typography)
 - [verlok/vanilla-lazyload](https://github.com/verlok/vanilla-lazyload)
-   
-## How to install
-
