@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: a54749dc-8853-4207-b4f3-c20bdfb5b18a
+handle: headScripts
+instructions: 'Added immediately before the </head> tag'
+name: 'Head Scripts'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: '1'
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

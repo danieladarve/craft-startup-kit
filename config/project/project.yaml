@@ -1,0 +1,93 @@
+dateModified: 1599798459
+email:
+  fromEmail: $SITE_EMAIL
+  fromName: $SITE_NAME
+  replyToEmail: null
+  template: null
+  transportSettings:
+    apiKey: $SENDGRID
+  transportType: putyourlightson\sendgrid\mail\SendgridAdapter
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
+plugins:
+  cp-nav:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.7
+    settings:
+      originalNavHash:
+        __assoc__:
+          -
+            - efb26fec-0e3f-48ee-af83-8cc9cef76dbf
+            - W3sibGFiZWwiOiJEYXNoYm9hcmQiLCJ1cmwiOiJkYXNoYm9hcmQiLCJmb250SWNvbiI6ImdhdWdlIn0seyJsYWJlbCI6IkVudHJpZXMiLCJ1cmwiOiJlbnRyaWVzIiwiZm9udEljb24iOiJzZWN0aW9uIn0seyJsYWJlbCI6Ikdsb2JhbHMiLCJ1cmwiOiJnbG9iYWxzIiwiZm9udEljb24iOiJnbG9iZSJ9LHsibGFiZWwiOiJBc3NldHMiLCJ1cmwiOiJhc3NldHMiLCJmb250SWNvbiI6ImFzc2V0cyJ9LHsibGFiZWwiOiJPbGl2ZW1lbnVzIiwidXJsIjoib2xpdmVtZW51cyIsImljb24iOiIvVXNlcnMvZGFuaWVsZ29uemFsZXphZGFydmUvRGV2ZWxvcG1lbnQvY3JhZnQtc3RhcnR1cC1raXQvdmVuZG9yL29saXZlc3R1ZGlvL2NyYWZ0LW9saXZlbWVudXMvc3JjL2ljb24tbWFzay5zdmcifSx7ImxhYmVsIjoiU0VPIiwidXJsIjoic2VvIiwiaWNvbiI6Ii9Vc2Vycy9kYW5pZWxnb256YWxlemFkYXJ2ZS9EZXZlbG9wbWVudC9jcmFmdC1zdGFydHVwLWtpdC92ZW5kb3IvZXRoZXIvc2VvL3NyYy9pY29uLW1hc2suc3ZnIiwic3VibmF2Ijp7ImRhc2hib2FyZCI6eyJsYWJlbCI6IkRhc2hib2FyZCIsInVybCI6InNlbyJ9LCJzaXRlbWFwIjp7ImxhYmVsIjoiU2l0ZW1hcCIsInVybCI6InNlby9zaXRlbWFwIn0sInJlZGlyZWN0cyI6eyJsYWJlbCI6IlJlZGlyZWN0cyIsInVybCI6InNlby9yZWRpcmVjdHMifSwic2V0dGluZ3MiOnsibGFiZWwiOiJTZXR0aW5ncyIsInVybCI6InNlby9zZXR0aW5ncyJ9fX0seyJsYWJlbCI6IkZvcm1zIiwidXJsIjoid2hlZWxmb3JtIiwiYmFkZ2VDb3VudCI6IjAiLCJpY29uIjoiL1VzZXJzL2RhbmllbGdvbnphbGV6YWRhcnZlL0RldmVsb3BtZW50L2NyYWZ0LXN0YXJ0dXAta2l0L3ZlbmRvci94cGVydGJvdC9jcmFmdC13aGVlbGZvcm0vc3JjL2ljb24tbWFzay5zdmcifSx7InVybCI6InV0aWxpdGllcyIsImxhYmVsIjoiVXRpbGl0aWVzIiwiZm9udEljb24iOiJ0b29sIiwiYmFkZ2VDb3VudCI6MH0seyJ1cmwiOiJzZXR0aW5ncyIsImxhYmVsIjoiU2V0dGluZ3MiLCJmb250SWNvbiI6InNldHRpbmdzIn0seyJ1cmwiOiJwbHVnaW4tc3RvcmUiLCJsYWJlbCI6IlBsdWdpbiBTdG9yZSIsImZvbnRJY29uIjoicGx1Z2luIn1d
+  image-resizer:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  imager:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  minify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  olivemenus:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.1.10
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  redactor-custom-styles:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  retcon:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  sendgrid:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  seo:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.1.1
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.1
+  typedlinkfield:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  wheelform:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+    settings:
+      cp_label: Forms
+      from_email: $SITE_EMAIL
+      from_name: $SITE_NAME
+      recaptcha_public: $RECAPTCHA_PUBLIC_KEY
+      recaptcha_secret: $RECAPTCHA_PRIVATE_KEY
+      recaptcha_version: '3'
+      success_message: 'Thank You! we will review your submission shortly.'
+      volume_id: ''
+system:
+  edition: solo
+  live: true
+  name: $SITE_NAME
+  schemaVersion: 3.5.13
+  timeZone: Australia/Melbourne
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

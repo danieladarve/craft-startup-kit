@@ -1,0 +1,60 @@
+fieldLayouts:
+  f5656723-1457-4216-a988-c5d52d84dbdf:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: Title
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 90552b17-3ba7-452a-9dfd-0b13004b4659
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: General
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 466b709b-6e9e-40e5-bed1-9f3604b02ce5
+            instructions: ''
+            label: 'Meta & Social Data'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Meta & Social Data'
+        sortOrder: 2
+handle: pageBlock
+hasTitleField: true
+name: 'Page - Block'
+section: a4cade2e-b351-4d0b-8087-3328bc132811
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: ''

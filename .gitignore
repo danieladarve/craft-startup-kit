@@ -1,0 +1,43 @@
+# Craft CMS
+cpresources
+web/cpresources
+vendor
+.env
+.env.sh
+*.log
+storage/*
+config/license.key
+web/imager
+
+# OS Files
+.DS_Store
+*.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Node
+node_modules
+
+# Backups
+backups
+
+# Caching
+web/cache
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*

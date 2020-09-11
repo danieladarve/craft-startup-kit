@@ -1,0 +1,9 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+@import 'css/utilities/transition.scss';
+@import 'css/components/alpinejs.scss';
+@import 'css/components/link.scss';
+@import 'css/base/index.scss';
+
+@import "tailwindcss/utilities";

@@ -1,0 +1,11 @@
+contentColumnType: string(7)
+fieldGroup: a54749dc-8853-4207-b4f3-c20bdfb5b18a
+handle: mobileUrlBarColour
+instructions: 'Controls the URL bar colour in mobile chrome browsers'
+name: 'Mobile URL Bar Colour'
+searchable: false
+settings:
+  defaultColor: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

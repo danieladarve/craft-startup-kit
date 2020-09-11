@@ -1,0 +1,68 @@
+{% minify %}
+
+   <!doctype html>
+   <html class="no-js" lang="{{ craft.app.language|slice(0,2) }}">
+      <head>
+
+         <meta charset="utf-8">
+         <meta http-equiv="x-ua-compatible" content="ie=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+         {% if craft.app.config.env != 'production' %}
+            <meta name="robots" content="noindex">
+         {% endif %}
+
+         {# Preload Fonts #}
+         {% set preloadedFonts = [] %}
+         {% for font in preloadedFonts %}
+            <link rel="preload" href="/fonts/{{ font }}.woff2" as="font" crossorigin>
+         {% endfor %}
+
+         {# CSS #}
+         {% set cssUrl = url('assets/app.css') %}
+
+         {% if block('criticalCss')|length and craft.app.config.env == 'production' %}
+            <style>
+               {% block criticalCss %}{% endblock %}
+            </style>
+            <link rel="preload" href="{{ cssUrl }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+            <noscript>
+               <link rel="stylesheet" href="{{ cssUrl }}">
+            </noscript>
+         {% else %}
+            <link rel="stylesheet" href="{{ cssUrl }}">
+         {% endif %}
+
+         {# Favicons #}
+         {{ source('_components/favicons', ignore_missing = true) }}
+
+      </head>
+
+      <body
+         x-data="app()"
+         x-init="viewportHeight()"
+         x-on:resize.window="viewportHeight()"
+      >
+
+         {% block body %}{% endblock %}
+
+         {# Javascript #}
+         <script src="{{ url('assets/app.js') }}" defer></script>
+
+         {% js %}
+            function app() {
+               return {
+                  viewportHeight: null,
+                  viewportHeight() {
+                     viewportHeight = window.innerHeight * 0.01;
+                     document.documentElement.style.setProperty('--vh', `${viewportHeight}px`);
+                  }
+               }
+            }
+         {% endjs %}
+
+      </body>
+
+   </html>
+
+{% endminify %}
