@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "CraftCMS 3 Startup Boilerplate Kit",
   "type": "project",
-  "repository": "https://github.com/k0d3rR/craft-startup-kit",
+  "repository": "https://github.com/danieladarve/craft-startup-kit",
   "author": "Daniel G Adarve",
   "license": "MIT",
   "private": false,

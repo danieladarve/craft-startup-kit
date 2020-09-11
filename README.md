@@ -11,7 +11,7 @@ See [Tailwind CSS](https://tailwindcss.com) and [AlpineJS](https://github.com/al
 
 ## How to Install
 
-1. `composer create-project k0d3rr/craft-startup-kit`
+1. `composer create-project danieladarve/craft-startup-kit`
 2. Don't run `./craft setup`, instead manually edit the `.env` file.
 3. Once the `.env` is filled in, run `./craft install`
 
@@ -19,8 +19,8 @@ See [Tailwind CSS](https://tailwindcss.com) and [AlpineJS](https://github.com/al
 
 - [Craft CMS 3.x](https://github.com/craftcms/cms)
 - Templates
-   - [Blocks](https://github.com/k0d3rR/craft-startup-kit#blocks)
-   - [Components](https://github.com/k0d3rR/craft-startup-kit#components)
+   - Blocks
+   - Components
    - Pages (With dynamic page types)
    - Email
    - Exception pages (404, 410, 503)
