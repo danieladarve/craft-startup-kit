@@ -58,3 +58,17 @@ Used a few plugins to speed up the development of common tasks such as styling t
 - [tailwindcss-aspect-ratio](https://github.com/webdna/tailwindcss-aspect-ratio)
 - [benface/tailwindcss-typography](https://github.com/benface/tailwindcss-typography)
 - [verlok/vanilla-lazyload](https://github.com/verlok/vanilla-lazyload)
+
+## CraftCMS Global Configuration
+Added the following global generic fields
+
+- Head, Body & Footer
+  - Scripts
+    - Head Scripts
+    - Body Scripts
+    - Footer Scripts
+  - Favicons
+- Site
+  - Site Logo
+  - Mobile URL Bar Colour
+  - Cookie Consent

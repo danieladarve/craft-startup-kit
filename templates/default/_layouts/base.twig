@@ -1,68 +1,84 @@
 {% minify %}
 
-   <!doctype html>
-   <html class="no-js" lang="{{ craft.app.language|slice(0,2) }}">
-      <head>
+  <!doctype html>
+  <html class="no-js" lang="{{ craft.app.language|slice(0,2) }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-         <meta charset="utf-8">
-         <meta http-equiv="x-ua-compatible" content="ie=edge">
-         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% if craft.app.config.env != 'production' %}
+      <meta name="robots" content="noindex">
+    {% endif %}
 
-         {% if craft.app.config.env != 'production' %}
-            <meta name="robots" content="noindex">
-         {% endif %}
+    {% include ['./_shared/_seo'] ignore missing %}
+    {% include ['./_shared/_favicons'] ignore missing %}
+    {% include ['./_shared/_wheelform-head'] ignore missing %}
 
-         {# Preload Fonts #}
-         {% set preloadedFonts = [] %}
-         {% for font in preloadedFonts %}
-            <link rel="preload" href="/fonts/{{ font }}.woff2" as="font" crossorigin>
-         {% endfor %}
+    {# Preload Fonts #}
+    {% set preloadedFonts = [] %}
+    {% for font in preloadedFonts %}
+      <link rel="preload" href="/fonts/{{ font }}.woff2" as="font" crossorigin>
+    {% endfor %}
 
-         {# CSS #}
-         {% set cssUrl = url('assets/app.css') %}
+    {# CSS #}
+    {% set cssUrl = url('assets/app.css') %}
 
-         {% if block('criticalCss')|length and craft.app.config.env == 'production' %}
-            <style>
-               {% block criticalCss %}{% endblock %}
-            </style>
-            <link rel="preload" href="{{ cssUrl }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-            <noscript>
-               <link rel="stylesheet" href="{{ cssUrl }}">
-            </noscript>
-         {% else %}
-            <link rel="stylesheet" href="{{ cssUrl }}">
-         {% endif %}
+    {% if block('criticalCss')|length and craft.app.config.env == 'production' %}
+      <style>
+        {% block criticalCss %}{% endblock %}
+      </style>
+      <link rel="preload" href="{{ cssUrl }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <noscript>
+        <link rel="stylesheet" href="{{ cssUrl }}">
+      </noscript>
+    {% else %}
+      <link rel="stylesheet" href="{{ cssUrl }}">
+    {% endif %}
 
-         {# Favicons #}
-         {{ source('_components/favicons', ignore_missing = true) }}
+    {# Theme Colour #}
+    {% if site['mobileUrlBarColour'] is defined and site['mobileUrlBarColour'] | length %}
+      <meta name="theme-color" content="{{ site['mobileUrlBarColour'] }}" />
+    {% endif %}
 
-      </head>
+    {# Head Critical Scripts #}
+    {% if headBodyFooter['headScripts'] is defined and headBodyFooter['headScripts'] | length %}
+      {{ headBodyFooter['headScripts']|raw }}
+    {% endif %}
+  </head>
 
-      <body
-         x-data="app()"
-         x-init="viewportHeight()"
-         x-on:resize.window="viewportHeight()"
-      >
+  <body
+    x-data="app()"
+    x-init="viewportHeight()"
+    x-on:resize.window="viewportHeight()"
+  >
+  {# Body Critical Scripts #}
+  {% if headBodyFooter['bodyScripts'] is defined and headBodyFooter['bodyScripts'] | length %}
+    {{ headBodyFooter['bodyScripts']|raw }}
+  {% endif %}
 
-         {% block body %}{% endblock %}
+  {% block body %}{% endblock %}
 
-         {# Javascript #}
-         <script src="{{ url('assets/app.js') }}" defer></script>
+  {# Javascript #}
+  <script src="{{ url('assets/app.js') }}" defer></script>
 
-         {% js %}
-            function app() {
-               return {
-                  viewportHeight: null,
-                  viewportHeight() {
-                     viewportHeight = window.innerHeight * 0.01;
-                     document.documentElement.style.setProperty('--vh', `${viewportHeight}px`);
-                  }
-               }
-            }
-         {% endjs %}
+  {% js %}
+    function app() {
+      return {
+        viewportHeight: null,
+        viewportHeight() {
+          viewportHeight = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty('--vh', `${viewportHeight}px`);
+        }
+      }
+    }
+  {% endjs %}
+  {# Footer Critical Scripts #}
+  {% if headBodyFooter['footerScripts'] is defined and headBodyFooter['footerScripts'] | length %}
+    {{ headBodyFooter['footerScripts']|raw }}
+  {% endif %}
+  </body>
 
-      </body>
-
-   </html>
+  </html>
 
 {% endminify %}

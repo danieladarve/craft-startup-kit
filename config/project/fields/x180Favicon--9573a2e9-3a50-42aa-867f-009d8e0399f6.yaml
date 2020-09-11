@@ -1,0 +1,30 @@
+contentColumnType: string
+fieldGroup: a54749dc-8853-4207-b4f3-c20bdfb5b18a
+handle: x180Favicon
+instructions: ''
+name: '180x180 Favicon'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:d22d8c4e-5130-4bb2-afad-a7c08be98605'
+  defaultUploadLocationSubpath: site/icons
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Add an icon'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:d22d8c4e-5130-4bb2-afad-a7c08be98605'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

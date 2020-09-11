@@ -1,21 +1,18 @@
-{% if head['x16Favicon'].one().url is defined %}
-  <link rel="icon" href="{{ head['x16Favicon'].one().url }}">
+{% if headBodyFooter['x16Favicon'].one().url is defined %}
+  <link rel="icon" href="{{ headBodyFooter['x16Favicon'].one().url }}">
 {% endif %}
-{% if head['x32Favicon'].one().url is defined %}
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ head['x32Favicon'].one().url }}">
+{% if headBodyFooter['x32Favicon'].one().url is defined %}
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ headBodyFooter['x32Favicon'].one().url }}">
 {% endif %}
-{% if head['x150Favicon'].one().url is defined %}
-  <meta name="msapplication-TileImage" content="{{ head['x150Favicon'].one().url }}">
+{% if headBodyFooter['x150Favicon'].one().url is defined %}
+  <meta name="msapplication-TileImage" content="{{ headBodyFooter['x150Favicon'].one().url }}">
 {% endif %}
-{% if head['x180Favicon'].one().url is defined %}
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ head['x180Favicon'].one().url }}">
+{% if headBodyFooter['x180Favicon'].one().url is defined %}
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ headBodyFooter['x180Favicon'].one().url }}">
 {% endif %}
-{% if head['x192Favicon'].one().url is defined %}
-  <link rel="icon" type="image/png" sizes="192x192" href="{{ head['x192Favicon'].one().url }}">
+{% if headBodyFooter['x192Favicon'].one().url is defined %}
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ headBodyFooter['x192Favicon'].one().url }}">
 {% endif %}
-{% if head['x196Favicon'].one().url is defined %}
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ head['x196Favicon'].one().url }}">
-{% endif %}
-{% if head['mobileUrlBarColour'] is defined and head['mobileUrlBarColour']|length %}
-  <meta name="msapplication-TileColor" content="{{ head['mobileUrlBarColour'] }}">
+{% if headBodyFooter['x196Favicon'].one().url is defined %}
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ headBodyFooter['x196Favicon'].one().url }}">
 {% endif %}

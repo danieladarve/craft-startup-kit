@@ -1,2 +1,98 @@
+fieldLayouts:
+  6d55b64e-0812-4157-ae02-81d807ef8c66:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 75413f0c-aa9c-4ad4-9553-f1e5ed0bc786
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 19c9ffe2-8937-4eb0-81b2-5f866d1849bc
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6c142230-f041-47e0-a0fc-c3485c5ef09a
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Scripts
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 800145a3-76c0-4c7c-a9d9-f15cf482a13d
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d869f605-971f-427e-8042-e5612147ea7d
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f45eb1bb-5aa5-4565-9c3a-60e9de3ffeb9
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9573a2e9-3a50-42aa-867f-009d8e0399f6
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bb60e701-4755-49bc-b0fd-6bba8426edb8
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d18516f6-3763-4727-836f-f15f36809c4a
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            style: tip
+            tip: 'https://www.favicon-generator.org/'
+            type: craft\fieldlayoutelements\Tip
+        name: Favicons
+        sortOrder: 2
 handle: headBodyFooter
 name: 'Head, Body & Footer'
