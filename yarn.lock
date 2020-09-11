@@ -4660,10 +4660,9 @@ language-tags@^1.0.5:
   dependencies:
     language-subtag-registry "~0.3.2"
 
-laravel-mix-eslint-config@^0.1.7:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/laravel-mix-eslint-config/-/laravel-mix-eslint-config-0.1.7.tgz#591c9813ccab2e9fb1b24f76b5165c2a1c903d9f"
-  integrity sha512-QbtWUD0zrQJ6V2VVYzhVXyk3smTYqwKIsJP9blGNThi9U3l+ALh8qOHt1WeQ4NXZmMnWeM5t+lXYQDywhPNKCg==
+laravel-mix-eslint-config@danieladarve/laravel-mix-eslint-config:
+  version "0.1.5"
+  resolved "https://codeload.github.com/danieladarve/laravel-mix-eslint-config/tar.gz/446e9c2e4b8123a2874c4f2b39c691cef85804bc"
 
 laravel-mix-postcss-config@^1.0.4:
   version "1.0.4"

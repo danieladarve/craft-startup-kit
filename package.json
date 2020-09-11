@@ -29,7 +29,7 @@
     "eslint-plugin-react-hooks": "^4.1.1",
     "eslint-plugin-vue": "^6.2.2",
     "laravel-mix": "^5.0.1",
-    "laravel-mix-eslint-config": "^0.1.7",
+    "laravel-mix-eslint-config": "danieladarve/laravel-mix-eslint-config",
     "laravel-mix-postcss-config": "^1.0.4",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.2.3",
