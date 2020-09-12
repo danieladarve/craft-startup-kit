@@ -1,25 +1,25 @@
 {% extends "_layouts/global" %}
 
 {% block content %}
-   {%- minify -%}
+  {%- minify -%}
 
-      {# ------- Variables ------- #}
+    {# ------- Variables ------- #}
 
-      {# ------- Template ------- #}
+    {# ------- Template ------- #}
 
-      {% for block in entry.pageBlockContent.all() %}
-         {% include '_blocks/' ~ block.type.handle %}
-      {% endfor %}
+    {% for block in entry.pageBlockContent.all() %}
+      {% include ['_blocks/' ~ block.type.handle] ignore missing %}
+    {% endfor %}
 
-   {%- endminify -%}
+  {%- endminify -%}
 {% endblock %}
 
 {# ------- Critical CSS ------- #}
 
 {% if entry is defined %}
-   {% block criticalCss %}
-      {%- spaceless -%}
-         {{ source ('_criticalCss/' ~ entry.slug ~ '.css', ignore_missing = true) }}
-      {%- endspaceless -%}
-   {% endblock %}
+  {% block criticalCss %}
+    {%- spaceless -%}
+      {{ source ('_criticalCss/' ~ entry.slug ~ '.css', ignore_missing = true) }}
+    {%- endspaceless -%}
+  {% endblock %}
 {% endif %}

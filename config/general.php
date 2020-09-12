@@ -61,12 +61,12 @@ return [
   // Staging environment settings
   'staging'    => [
     'devMode'           => true,
-    'allowAdminChanges' => true,
+    'allowAdminChanges' => false,
   ],
 
   // Production environment settings
   'production' => [
     'useSecureCookies'  => true,
-    'allowAdminChanges' => true,
+    'allowAdminChanges' => false,
   ],
 ];

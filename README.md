@@ -36,7 +36,7 @@ See [Tailwind CSS](https://tailwindcss.com) and [AlpineJS](https://github.com/al
      - [Olive Menus](https://github.com/OliveStudio/olivemenus)
      - [Link Field](https://github.com/sebastian-lenz/craft-linkfield)
    - Images
-     - [Imager (forked version)](https://github.com/k0d3rR/Imager-Craft)
+     - [Imager (forked version)](https://github.com/danieladarve/Imager-Craft)
      - [Image Resizer](https://github.com/verbb/image-resizer)
    - Optimization
      - [Minify](https://github.com/nystudio107/craft-minify)
