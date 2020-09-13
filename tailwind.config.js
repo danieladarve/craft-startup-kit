@@ -134,6 +134,7 @@ module.exports = {
       '100': '1',
     },
     extend: {
+      // https://javisperez.github.io/tailwindcolorshades
       colors: {
         primary: {
           100: '#F0F2FD',

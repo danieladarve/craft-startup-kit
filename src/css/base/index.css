@@ -25,6 +25,9 @@ p {
   &:last-of-type {
     @apply mb-0;
   }
+  &:empty {
+    @apply hidden;
+  }
 }
 
 // Selection

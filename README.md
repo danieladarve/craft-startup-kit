@@ -49,7 +49,7 @@ See [Tailwind CSS](https://tailwindcss.com) and [AlpineJS](https://github.com/al
      - [Wheel Form](https://github.com/xpertbot/craft-wheelform)
    - Customization
      - [Control Panel Nav](https://github.com/verbb/cp-nav)
- - Shell Scripts `scripts/*.sh`
+ - Shell Scripts `scripts/*.sh` [nystudio107/craft-scripts](https://github.com/nystudio107/craft-scripts)
  
 ## Tailwind Configuration
 Used a few plugins to speed up the development of common tasks such as styling typography, forms, aspect ratios.
@@ -72,3 +72,6 @@ Added the following global generic fields
   - Site Logo
   - Mobile URL Bar Colour
   - Cookie Consent
+  
+## Useful Resources
+- [Color Shades Generator for TailwindCSS](https://javisperez.github.io/tailwindcolorshades)
