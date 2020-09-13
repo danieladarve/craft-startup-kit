@@ -33,7 +33,7 @@
     }
 } %}
 
-<div class="w-full {{ class is defined ? class }} {{ attribute(attribute(paddingClass, paddingSize), padding) }}">
+<section class="w-full {{ class is defined ? class }} {{ attribute(attribute(paddingClass, paddingSize), padding) }}">
 
     {% if container is not defined %}
         <div class="container">
@@ -46,4 +46,4 @@
         </div>
     {% endif %}
 
-</div>
+</section>
