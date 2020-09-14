@@ -1,10 +1,7 @@
 # Craft CMS 3 + (Laravel Mix, TailwindCSS+purge, PostCss, AlpineJS, ESLint, AirBnb, Prettier)
 
-A lightly opinionated Craft CMS setup, packed with commonly used FREE packages.
-
-Use this [Craft CMS 3.x](https://github.com/craftcms/cms) boilerplate to kickstart Craft + Twig projects.
-
-Made with the idea of reducing overkill builds when using VueJS or ReactJS for simple brochure websites, while still keeping the simplicity and advantages of a modern Javascript lightweight framework by using AlpineJs instead.
+A lightly opinionated Craft CMS setup.
+Used internally for projects.
 
 See [Tailwind CSS](https://tailwindcss.com) and [AlpineJS](https://github.com/alpinejs/alpine) for more details.
 
@@ -54,7 +51,7 @@ See [Tailwind CSS](https://tailwindcss.com) and [AlpineJS](https://github.com/al
 ## Tailwind Configuration
 Used a few plugins to speed up the development of common tasks such as styling typography, forms, aspect ratios.
 
-- [@tailwindcss/ui](https://www.npmjs.com/package/@tailwindcss/ui)
+- [@tailwindcss/ui configuration](https://www.npmjs.com/package/@tailwindcss/ui)
 - [tailwindcss-aspect-ratio](https://github.com/webdna/tailwindcss-aspect-ratio)
 - [benface/tailwindcss-typography](https://github.com/benface/tailwindcss-typography)
 - [verlok/vanilla-lazyload](https://github.com/verlok/vanilla-lazyload)
