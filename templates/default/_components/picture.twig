@@ -1,24 +1,24 @@
 {#
-   Picture
-   Generate a picture element with an srcset and lazy load
+Picture
+Generate a picture element with an srcset and lazy load
 
-   @type {include}
-   @param {string/object} image
-   @param {string} transform
-   @param {string} pictureClass
-   @param {string} imgClass
-   @param {bool} svgConvert
-   @param {string} svgConvertClass
-   @param {string} alt
-   @param {bool} lazy
-   @param {bool} ratio
+@type {include}
+@param {string/object} image
+@param {string} transform
+@param {string} pictureClass
+@param {string} imgClass
+@param {bool} svgConvert
+@param {string} svgConvertClass
+@param {string} alt
+@param {bool} lazy
+@param {bool} ratio
 
 #}
 
 {% if
-    image['extension'] is defined and image.extension == 'svg' or
-    image['extension'] is defined and image.extension == 'gif' or
-    image['extension'] is not defined and '.gif' in image
+  image['extension'] is defined and image.extension == 'svg' or
+  image['extension'] is defined and image.extension == 'gif' or
+  image['extension'] is not defined and '.gif' in image
 %}
 
    {% if svgConvert is defined %}
@@ -40,80 +40,78 @@
 
 {% else %}
 
-   {# All other image types #}
+  {# All other image types #}
 
-   {% set production = craft.app.config.env == 'production' ? true : false %}
-   {% set transform = transform ?? [] %}
-   {% set lazy = lazy ?? true %}
-   {% set ratio = ratio ?? true %}
-   {% set webp = craft.imager.serverSupportsWebp() and production %}
+  {% set transform = transform ?? [] %}
+  {% set lazy = lazy ?? true %}
+  {% set ratio = ratio is defined ? ratio : false %}
+  {% set webp = craft.imager.serverSupportsWebp() %}
 
-   {% set pictureTransform = craft.imager.transformImage(
+  {% set pictureTransform = craft.imager.transformImage(
+    image,
+    transform
+    ) %}
+
+  {% if webp %}
+    {% set pictureTransformWebp = craft.imager.transformImage(
       image,
-      transform
-   ) %}
-
-   {% if webp %}
-      {% set pictureTransformWebp = craft.imager.transformImage(
-         image,
-         transform,
-         {
-            format: 'webp'
-         }
+      transform,
+      {
+        format: 'webp'
+      }
       ) %}
-   {% endif %}
+  {% endif %}
 
-   {% if
-      pictureTransform|length or
-      webp
-   %}
+  {% if
+    pictureTransform|length or
+    webp
+  %}
 
-      {% if ratio %}
-         <div
-            class="relative overflow-hidden w-full h-full"
-            style="padding-top: {{ (pictureTransform[0].height / pictureTransform[0].width) * 100 }}%;"
-         >
+    {% if ratio %}
+      <div
+      class="relative overflow-hidden w-full h-full"
+      style="padding-top: {{ (pictureTransform[0].height / pictureTransform[0].width) * 100 }}%;"
+      >
+    {% endif %}
+    <picture{% if pictureClass is defined or ratio is defined %} class="{{ ratio ? 'absolute top-0 left-0 w-full h-full' }} {{ pictureClass is defined ? pictureClass }}"{% endif %}>
+      {% if lazy %}
+        {% if webp %}
+          <source
+            type="image/webp"
+            data-srcset="{{ pictureTransformWebp.url }}"
+            data-sizes="100vw"
+          >
+        {% endif %}
+        <img
+          src="{{ craft.imager.placeholder({ width: pictureTransform.width, height: pictureTransform.height }) }}"
+          data-src="{{ webp ? pictureTransformWebp|last : pictureTransform|last }}"
+          data-srcset="{{ pictureTransform.url }}"
+          data-sizes="100vw"
+          alt="{{ alt ?? image.title }}"
+          class="js-lazy-load{% if imgClass is defined %} {{ imgClass }}{% endif %}"
+        >
+      {% else %}
+        {% if webp %}
+          <source
+            type="image/webp"
+            srcset="{{ pictureTransformWebp.url }}"
+            sizes="100vw"
+          >
+        {% endif %}
+        <img
+          src="{{ webp ? pictureTransformWebp|last : pictureTransform|last }}"
+          srcset="{{ craft.imager.srcset(pictureTransform) }}"
+          sizes="100vw"
+          alt="{{ alt ?? image.title }}"
+          {% if imgClass is defined %} class="{{ imgClass }}"{% endif %}
+        >
       {% endif %}
+    </picture>
 
-      <picture{% if pictureClass is defined or ratio is defined %} class="{{ ratio is defined ? 'absolute top-0 left-0 w-full h-full' }} {{ pictureClass is defined ? pictureClass }}"{% endif %}>
-         {% if lazy %}
-            {% if webp %}
-               <source
-                  type="image/webp"
-                  data-srcset="{{ craft.imager.srcset(pictureTransformWebp) }}"
-                  data-sizes="100vw"
-               >
-            {% endif %}
-            <img
-               src="{{ craft.imager.placeholder({ width: pictureTransform|last.width, height: pictureTransform|last.height }) }}"
-               data-src="{{ webp ? pictureTransformWebp|last : pictureTransform|last }}"
-               data-srcset="{{ craft.imager.srcset(pictureTransform) }}"
-               data-sizes="100vw"
-               alt="{{ alt ?? image.title }}"
-               class="js-lazy-load{% if imgClass is defined %} {{ imgClass }}{% endif %}"
-            >
-         {% else %}
-            {% if webp %}
-               <source
-                  type="image/webp"
-                  srcset="{{ craft.imager.srcset(pictureTransformWebp) }}"
-                  sizes="100vw"
-               >
-            {% endif %}
-            <img
-               src="{{ webp ? pictureTransformWebp|last : pictureTransform|last }}"
-               srcset="{{ craft.imager.srcset(pictureTransform) }}"
-               sizes="100vw"
-               alt="{{ alt ?? image.title }}"
-               {% if imgClass is defined %} class="{{ imgClass }}"{% endif %}
-            >
-         {% endif %}
-      </picture>
+    {% if ratio %}
+      </div>
+    {% endif %}
 
-      {% if ratio %}
-         </div>
-      {% endif %}
-
-   {% endif %}
+  {% endif %}
 
 {% endif %}
