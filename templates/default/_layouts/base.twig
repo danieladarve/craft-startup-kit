@@ -1,52 +1,52 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ craft.app.language|slice(0,2) }}">
 {% minify %}
-
-  <!doctype html>
-  <html class="no-js" lang="{{ craft.app.language|slice(0,2) }}">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% spaceless %}
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    {% if craft.app.config.env != 'production' %}
-      <meta name="robots" content="noindex">
-    {% endif %}
+      {% if craft.app.config.env != 'production' %}
+        <meta name="robots" content="noindex">
+      {% endif %}
 
-    {% include ['./_shared/_seo'] ignore missing %}
-    {% include ['./_shared/_favicons'] ignore missing %}
-    {% include ['./_shared/_wheelform-head'] ignore missing %}
+      {% include ['./_shared/_seo'] ignore missing %}
+      {% include ['./_shared/_favicons'] ignore missing %}
+      {% include ['./_shared/_wheelform-head'] ignore missing %}
 
-    {# Preload Fonts #}
-    {% set preloadedFonts = [] %}
-    {% for font in preloadedFonts %}
-      <link rel="preload" href="/fonts/{{ font }}.woff2" as="font" crossorigin>
-    {% endfor %}
+      {# Preload Fonts #}
+      {% set preloadedFonts = [] %}
+      {% for font in preloadedFonts %}
+        <link rel="preload" href="/fonts/{{ font }}.woff2" as="font" crossorigin>
+      {% endfor %}
 
-    {# CSS #}
-    {% set cssUrl = url('assets/app.css') %}
+      {# CSS #}
+      {% set cssUrl = url('assets/app.css') %}
 
-    {% if block('criticalCss')|length and craft.app.config.env == 'production' %}
-      <style>
-        {% block criticalCss %}{% endblock %}
-      </style>
-      <link rel="preload" href="{{ cssUrl }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-      <noscript>
+      {% if block('criticalCss')|length and craft.app.config.env == 'production' %}
+        <style>
+          {% block criticalCss %}{% endblock %}
+        </style>
+        <link rel="preload" href="{{ cssUrl }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+          <link rel="stylesheet" href="{{ cssUrl }}">
+        </noscript>
+      {% else %}
         <link rel="stylesheet" href="{{ cssUrl }}">
-      </noscript>
-    {% else %}
-      <link rel="stylesheet" href="{{ cssUrl }}">
-    {% endif %}
+      {% endif %}
 
-    {# Theme Colour #}
-    {% if site['mobileUrlBarColour'] is defined and site['mobileUrlBarColour'] | length %}
-      <meta name="theme-color" content="{{ site['mobileUrlBarColour'] }}" />
-    {% endif %}
+      {# Theme Colour #}
+      {% if site['mobileUrlBarColour'] is defined and site['mobileUrlBarColour'] | length %}
+        <meta name="theme-color" content="{{ site['mobileUrlBarColour'] }}" />
+      {% endif %}
 
-    {# Head Critical Scripts #}
-    {% if headBodyFooter['headScripts'] is defined and headBodyFooter['headScripts'] | length %}
-      {{ headBodyFooter['headScripts']|raw }}
-    {% endif %}
+      {# Head Critical Scripts #}
+      {% if headBodyFooter['headScripts'] is defined and headBodyFooter['headScripts'] | length %}
+        {{ headBodyFooter['headScripts']|raw }}
+      {% endif %}
+    {% endspaceless %}
   </head>
-
   <body
     x-data="app()"
     x-init="viewportHeight()"
@@ -78,7 +78,5 @@
     {{ headBodyFooter['footerScripts']|raw }}
   {% endif %}
   </body>
-
-  </html>
-
 {% endminify %}
+</html>
