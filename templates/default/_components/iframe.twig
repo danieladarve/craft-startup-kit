@@ -1,0 +1,14 @@
+{#
+  Section
+  Outputs an iframe.
+
+  @type {include}
+  @param {string} iframe
+  @param {string} class
+
+#}
+{% if iframe is defined and iframe|length %}
+  <div class="component--iframe {{ class??'' }}">
+    {{ iframe|raw }}
+  </div>
+{% endif %}

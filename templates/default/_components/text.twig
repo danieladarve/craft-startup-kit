@@ -1,0 +1,13 @@
+{#
+  Section
+  Outputs text.
+
+  @type {include}
+  @param {string} text
+
+#}
+{% if text is defined and text|length %}
+  <div class="component--text">
+    {{ text??'' }}
+  </div>
+{% endif %}

@@ -1,49 +1,72 @@
 {#
-   Section
-   Outputs section layout with correct padding and container.
+Section
+Outputs section layout with correct padding and container.
 
-   @type {embed}
-   @param {string} padding
-   @param {string} class
-   @param {bool} container
+@type {embed}
+@param {string} padding
+@param {string} paddingSize
+@param {string} class
+@param {string} containerClass
+@param {string, bool} background
+@param {bool} container
+@param {bool} mobileFullWidthContainer
 
 #}
 
 {% set padding = padding ?? 'topBottom' %}
 {% set paddingSize = paddingSize ?? 'base' %}
+{% set background = background ?? 'white' %}
+{% set containerClass = containerClass ?? '' %}
 
 {% set paddingClass = {
-    small: {
-        top: 'pt-20',
-        bottom: 'pb-20',
-        topBottom: 'py-20',
-        none: 'py-0'
-    },
-    base: {
-        top: 'pt-24',
-        bottom: 'pb-24',
-        topBottom: 'py-24',
-        none: 'py-0'
-    },
-    large: {
-        top: 'pt-32',
-        bottom: 'pb-32',
-        topBottom: 'py-32',
-        none: 'py-0'
-    }
+  small: {
+    top: 'pt-18',
+    bottom: 'pb-18',
+    topBottom: 'py-18',
+    none: 'py-0'
+  },
+  base: {
+    top: 'pt-24',
+    bottom: 'pb-24',
+    topBottom: 'py-24',
+    none: 'py-0'
+  },
+  large: {
+    top: 'pt-32',
+    bottom: 'pb-32',
+    topBottom: 'py-32',
+    none: 'py-0'
+  }
 } %}
 
-<section class="w-full {{ class is defined ? class }} {{ attribute(attribute(paddingClass, paddingSize), padding) }}">
+{% set backgroundColours = {
+  'white' : 'bg-white',
+  'tasman' : 'bg-tasman-500',
+  'zinnwaldite' : 'bg-zinnwaldite-500',
+  'roofTerracota' : 'bg-roof-terracota-500',
+  'corduroy' : 'bg-corduroy-500',
+  'puce' : 'bg-puce-500',
+  'whiteZinnwaldite' : 'bg-gradient-b-white-zinnwaldite',
+  'whiteTasman' : 'bg-gradient-b-white-tasman',
+  'potPourriCorduroy' : 'bg-gradient-b-pot-pourri-corduroy',
+  'roofTerracotaCorduroy' : 'bg-gradient-b-roof-terracota-corduroy',
+  'tasmanCorduroy' : 'bg-gradient-b-tasman-corduroy',
+  'zinnwalditeCorduroy' : 'bg-gradient-b-zinnwaldite-corduroy',
+  'tasman20White80' : 'md:bg-gradient-b-tasman20-white80',
+  'white80Zinnwaldite20' : 'md:bg-gradient-b-white80-zinnwaldite20',
+} %}
 
-    {% if container is not defined %}
-        <div class="container">
+<section class="w-full {{ class is defined ? class }} {{ attribute(attribute(paddingClass, paddingSize), padding) }} {{ attribute(backgroundColours, background) }}">
+
+  {% if container is not defined %}
+  <div class="container {{ containerClass }}">
     {% endif %}
 
     {% block sectionContent %}
     {% endblock %}
 
     {% if container is not defined %}
-        </div>
-    {% endif %}
+  </div>
+  {% endif %}
 
 </section>

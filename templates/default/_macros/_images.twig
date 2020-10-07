@@ -1,62 +1,12 @@
 {% macro get_optimized_image(image, forceWebp = false) %}
   {% if image %}
-    {% set width = image.getWidth() %}
-    {% set height = image.getHeight() %}
-
+    {% set width, height = image.getWidth(), image.getHeight() %}
     {% set imageFormat = image.url|split('.')|last %}
     {% if craft.imager.serverSupportsWebp() and forceWebp %}
       {% set imageFormat = 'webp' %}
     {% endif %}
-    {% set transformedImage = craft.imager.transformImage(image, [
+    {% set transformedImage = craft.imager.transformImage(
+      image, [
       { width: width, height: height, jpegQuality: 75, webpQuality: 75 }
-    ],{ format: imageFormat, allowUpscale: false, mode: 'crop', interlace: true }) %}
-    {{ transformedImage[0].url }}{% endif %}
-{% endmacro %}
-
-{% macro get_optimized_image_webp(image, alt, class) %}
-  {% if image %}
-    {% set width = image.getWidth() %}
-    {% set height = image.getHeight() %}
-    {% set extension = image.getExtension() %}
-    {% if craft.imager.serverSupportsWebp() %}
-      {% set extension = 'webp' %}
-    {% endif %}
-    {% set transformedImage = craft.imager.transformImage(image, [
-      { width: width, height: height, jpegQuality: 75, webpQuality: 75 }
-    ],{ format: image.getExtension(), allowUpscale: false, mode: 'crop', interlace: true }) %}
-
-    {% set transformedImageWebP = craft.imager.transformImage(image, [
-      { width: width, height: height, jpegQuality: 75, webpQuality: 75 }
-    ],{ format: extension, allowUpscale: false, mode: 'crop', interlace: true }) %}
-    <picture>
-      {% if craft.imager.serverSupportsWebp() %}
-        <source srcset="{{ transformedImageWebP[0].url }}" type="image/webp">
-      {% endif %}
-      <img src="{{ transformedImage[0].url }}" alt="{{ alt??'' }}" class="{{ class??'' }}"/>
-    </picture>
-  {% endif %}
-{% endmacro %}
-
-{% macro get_optimized_cropped_image(image, width, height, crop_position, alt, class) %}
-  {% set crop_position = crop_position|default('50% 50%') %}
-  {% if image and width and height %}
-    {% set extension = image.getExtension() %}
-    {% if craft.imager.serverSupportsWebp() %}
-      {% set extension = 'webp' %}
-    {% endif %}
-
-    {% set transformedImage = craft.imager.transformImage(image, [
-      { width: width, height: height, jpegQuality: 75, webpQuality: 75 }
-    ],{ format: image.getExtension(), allowUpscale: false, mode: 'crop', position: crop_position, interlace: true }) %}
-
-    {% set transformedImageWebP = craft.imager.transformImage(image, [
-      { width: width, height: height, jpegQuality: 75, webpQuality: 75 }
-    ],{ format: extension, allowUpscale: false, mode: 'crop', position: crop_position, interlace: true }) %}
-    <picture>
-      {% if craft.imager.serverSupportsWebp() %}
-        <source srcset="{{ transformedImageWebP[0].url }}" type="image/webp">
-      {% endif %}
-      <img src="{{ transformedImage[0].url }}" alt="{{ alt??'' }}" class="{{ class??'' }}"/>
-    </picture>
-  {% endif %}
+    ],{ format: imageFormat }) %}{{ transformedImage[0].url }}{% endif %}
 {% endmacro %}

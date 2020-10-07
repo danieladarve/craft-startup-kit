@@ -30,8 +30,8 @@
   "require": {
     "aelvan/imager": "dev-dev-fix-deprecations as 2.4.0",
     "carlcs/craft-redactorcustomstyles": "^3.0",
-    "craftcms/cms": "^3.5.0",
-    "craftcms/redactor": "^2.7",
+    "craftcms/cms": "3.5.12.1",
+    "craftcms/redactor": "2.8.1",
     "ether/seo": "^3.6",
     "mmikkel/retcon": "^2.2",
     "nystudio107/craft-minify": "^1.2",
@@ -41,7 +41,7 @@
     "verbb/cp-nav": "3.0.13.1",
     "verbb/field-manager": "2.2.0",
     "verbb/image-resizer": "^2.0",
-    "verbb/super-table": "^2.6",
+    "verbb/super-table": "2.6.3",
     "vlucas/phpdotenv": "^3.4.0",
     "xpertbot/craft-wheelform": "^2.5"
   },
