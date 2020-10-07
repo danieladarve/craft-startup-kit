@@ -33,6 +33,7 @@
     "craftcms/cms": "3.5.12.1",
     "craftcms/redactor": "2.8.1",
     "ether/seo": "^3.6",
+    "mmikkel/cp-field-inspect": "^1.2",
     "mmikkel/retcon": "^2.2",
     "nystudio107/craft-minify": "^1.2",
     "olivestudio/craft-olivemenus": "^1.2",
