@@ -1,6 +1,6 @@
 let mix = require('laravel-mix');
-require('laravel-mix-postcss-config');
 require('laravel-mix-eslint-config');
+require('laravel-mix-postcss-config');
 
 /*
  |--------------------------------------------------------------------------
@@ -29,11 +29,12 @@ mix
   .postCssConfig({
     parser: 'postcss-scss',
     plugins: [
-      // Plugins for PostCSS
-      require('postcss-import'),
+      require('postcss-easy-import'),
+      require('postcss-simple-vars'),
       require('postcss-nested'),
-      require('tailwindcss'),
-    ],
+      require('tailwindcss')('./tailwind.config.js'),
+      require('autoprefixer')
+    ]
   })
   .webpackConfig({
     resolve: {
